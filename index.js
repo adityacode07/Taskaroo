@@ -8,7 +8,13 @@ const authMiddleware=require('./middleware')
 const JWT_SECRET=require('./config')
 const app=express();
 app.use(express.json());
-app.use(cors({}))
+app.use(cors({
+    origin: '*', // Allow requests from any origin
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+    credentials: true // This might need to be false if using '*' for origin
+}));
+
+
 
 app.post('/signup',async(req,res)=>{
     const signupPayload=req.body;
