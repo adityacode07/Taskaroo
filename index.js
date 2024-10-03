@@ -8,11 +8,7 @@ const authMiddleware=require('./middleware')
 const JWT_SECRET=require('./config')
 const app=express();
 app.use(express.json());
-app.use(cors({
-    origin: '*', // Allow requests from any origin
-    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-    credentials: false // This allows you to use '*' for origin
-}));
+app.use(cors())
 
 app.get("/", (req, res) => {
     res.json({ message: "API is working!" });
