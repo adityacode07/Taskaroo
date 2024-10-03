@@ -13,6 +13,10 @@ app.use(cors({
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
     credentials: true // This might need to be false if using '*' for origin
 }));
+app.get("/", (req, res) => {
+    res.json({ message: "API is working!" });
+});
+
 
 
 
