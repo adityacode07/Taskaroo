@@ -11,8 +11,9 @@ app.use(express.json());
 app.use(cors({
     origin: '*', // Allow requests from any origin
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-    credentials: true // This might need to be false if using '*' for origin
+    credentials: false // This allows you to use '*' for origin
 }));
+
 app.get("/", (req, res) => {
     res.json({ message: "API is working!" });
 });
