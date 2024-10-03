@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express=require("express");
 const {signUpBody,signInBody,createToDo,updateToDo} = require("./types");
 const {Todo,User} = require("./db/db");
